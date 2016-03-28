@@ -1,0 +1,20 @@
+<h1>English - Russian</h1>
+<hr>
+<form name="engrusForm" novalidate ng-submit="addEngRus()">
+  <div class="form-group"
+      ng-class="{'has-error': todoForm.content.$invalid
+        && todoForm.content.$dirty}">
+    <input type="text" class="form-control focus" name="content"
+        placeholder="Content" autocomplete="off" required
+        ng-model="newEngRus.content">
+    <span class="has-error control-label" ng-show="
+        todoForm.content.$invalid && todoForm.content.$dirty">
+      Content is required.
+    </span>
+  </div>
+  <button class="btn btn-default" ng-disabled="engrusForm.$invalid">Add</button>
+</form>
+<hr>
+<div class="list-group">
+  <a class="list-group-item" ng-repeat="term in engrus">{{term.content}}&nbsp;</a>
+</div>
