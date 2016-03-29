@@ -1,7 +1,8 @@
 var app = angular
   .module('app', [
     'ui.router',
-    'lbServices'
+    'lbServices',
+    'angucomplete-alt'
   ])
   .config(['$stateProvider', '$urlRouterProvider', function($stateProvider,
       $urlRouterProvider) {
@@ -9,6 +10,13 @@ var app = angular
       .state('engrus_search', {
         url: '/engrus_search',
         templateUrl: 'views/engrus_search.html',
+        controller: 'EngRusController',
+        authenticate: true
+      })
+    
+    .state('engrus_result', {
+        url: '/engrus_result',
+        templateUrl: 'views/engrus_result.html',
         controller: 'EngRusController',
         authenticate: true
       })
