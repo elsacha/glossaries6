@@ -12,6 +12,7 @@ angular
             tokenId: response.id,
             email: email
           };
+          console.log("current user id: " + $rootScope.currentUser.id);
         });
     }
 
@@ -28,7 +29,8 @@ angular
       return Contributor
         .create({
          email: email,
-         password: password
+         password: password,
+         created: new Date()
        })
        .$promise;
     }

@@ -21,23 +21,25 @@
     "public": false
   },
   "ACL": {
-    "dataSource": "glosMongoDb",
+    "dataSource": "glosMongoDb2",
     "public": false
   },
   "RoleMapping": {
-    "dataSource": "glosMongoDb",
+    "dataSource": "glosMongoDb2",
     "public": false
   },
   "Role": {
-    "dataSource": "glosMongoDb",
+    "dataSource": "glosMongoDb2",
     "public": false
   },
   "EngRus": {
-    "dataSource": "glosMongoDb",
-    "public": true
+    "dataSource": "glosMongoDb2",
+    "public": true,
+    "$promise": {},
+    "$resolved": true
   },
   "Contributor": {
-    "dataSource": "glosMongoDb",
+    "dataSource": "glosMongoDb2",
     "public": true
   }
 }

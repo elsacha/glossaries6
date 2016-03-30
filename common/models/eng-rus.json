@@ -15,10 +15,26 @@
     },
     "subject": {
       "type": "string"
+    },
+    "comment": {
+      "type": "string"
+    },
+    "author": {
+      "type": "string"
+    },
+    "lastUpdated": {
+      "type": "date",
+      "required": true
     }
   },
   "validations": [],
-  "relations": {},
+  "relations": {
+    "engRusContributor": {
+      "type": "belongsTo",
+      "model": "Contributor",
+      "foreignKey": "contributorId"
+    }
+  },
   "acls": [
     {
       "accessType": "*",

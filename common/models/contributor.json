@@ -5,9 +5,19 @@
   "options": {
     "validateUpsert": true
   },
-  "properties": {},
+  "properties": {
+      "created": {
+      "type": "date"
+    }  
+  },
   "validations": [],
-  "relations": {},
+  "relations": {
+    "contributorEngRus": {
+      "type": "hasMany",
+      "model": "EngRus",
+      "foreignKey": "termId"
+    }
+  },
   "acls": [
     {
       "accessType": "*",
