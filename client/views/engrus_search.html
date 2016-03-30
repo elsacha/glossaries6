@@ -1,23 +1,30 @@
 <div class="row">
-    <div class="col-md-6 col-md-offset-3">
+    <!--<div class="col-md-6 col-md-offset-3">
         <h4>English - Russian</h4>
         <div class="form-group">
             <input type="text" ng-model="srcTerm" class="form-control" />
         </div>
         <a href="#/engrus_result" class="btn btn-primary">Search</a>
-    </div>
+    </div>-->
     
-
+    <h1>Eng - Rus Search</h1>
     <div class="col-md-6 col-md-offset-3">
-        <angucomplete-alt id="engrusSearchInput"
+        <div angucomplete-alt id="engrusSearchInput"
               placeholder="Search terms"
-              pause="400"
+              pause="200"
               selected-object="srcTerm"
-              remote-url='http://localhost:3000/api/engrus/'
+              remote-url='http://localhost:3000/api/customroutes/engrus_search/'
+              remote-url-data-field="results"
               title-field="eng"
-              description-field="email"
               text-no-results = "Not found"
-              input-class="form-control form-control-small"/>
+              match-class="highlight"
+              input-class="form-control form-control-small">
+        </div>
+        
+        <div >
+            <a href="#/engrus_result" class="btn btn-primary">Search</a>
+          </div>
+        
     </div>
 
     

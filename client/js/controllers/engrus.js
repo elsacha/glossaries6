@@ -2,7 +2,8 @@ angular
   .module('app')
   .controller('EngRusController', ['$scope', 'EngRus', '$http', 'sourceService',
                 function($scope, EngRus, $http, sourceService) {
-    $scope.sourceTerm =  sourceService.srcTerm;
+    $scope.sourceTerm =  sourceService.srcTerm.title;
+    //console.log($scope.sourceTerm.title);
       
     $scope.$watch('srcTerm', function() {
        sourceService.srcTerm = $scope.srcTerm; 
