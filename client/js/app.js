@@ -11,14 +11,21 @@ var app = angular
         url: '/engrus_search',
         templateUrl: 'views/engrus_search.html',
         controller: 'EngRusController',
-        authenticate: false
+        //authenticate: false
       })
     
     .state('engrus_result', {
         url: '/engrus_result',
         templateUrl: 'views/engrus_result.html',
         controller: 'EngRusController',
-        authenticate: false
+        //authenticate: false
+      })
+    
+    .state('engrus_add', {
+        url: '/engrus_add',
+        templateUrl: 'views/engrus_add.html',
+        controller: 'EngRusAddController',
+        //authenticate: true
       })
 //      .state('all-reviews', {
 //        url: '/all-reviews',

@@ -1,0 +1,32 @@
+<section>
+  <form name="engrusForm" ng-submit="addEngRus()">
+    <fieldset>
+      <legend>Add a term</legend>
+
+      <div class="form-group">
+        <label>Eng</label>
+        <input name="eng_add" type="text" ng-model="engrus.eng">
+      </div>
+
+      <div class="form-group">
+        <label>Rus</label>
+        <input name="rus_add" type="text" ng-model="engrus.rus">
+      </div>
+        
+      <div class="form-group">
+        <label>Subject</label>
+        <input name="engrus_subject_add" type="text" ng-model="engrus.subject">
+      </div>
+        
+      <div class="form-group">
+        <label>Comment</label>
+        <input name="engrus_comment_add" type="text" ng-model="engrus.comment">
+      </div>
+
+      <div class="actions">
+        <label></label>
+        <button>Add</button>
+      </div>
+    </fieldset>
+  </form>
+</section>

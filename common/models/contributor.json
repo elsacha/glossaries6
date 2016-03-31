@@ -6,9 +6,9 @@
     "validateUpsert": true
   },
   "properties": {
-      "created": {
+    "created": {
       "type": "date"
-    }  
+    }
   },
   "validations": [],
   "relations": {
