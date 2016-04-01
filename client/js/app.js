@@ -27,6 +27,13 @@ var app = angular
         controller: 'EngRusAddController',
         //authenticate: true
       })
+    
+    .state('engrus_terms_by_author', {
+        url: '/engrus_terms_by_author',
+        templateUrl: 'views/engrus_terms_by_author.html',
+        controller: 'EngRusTermsByAuthor',
+        //authenticate: true
+      })
 //      .state('all-reviews', {
 //        url: '/all-reviews',
 //        templateUrl: 'views/all-reviews.html',

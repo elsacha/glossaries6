@@ -10,7 +10,7 @@ var EngRus = app.models.EngRus;
   * Defines a routes so that blogs are accessible by user
   * and slug: /jeffdonthemic/hello-world instead of id.
   **/
-  app.get('/api/customroutes/engrus_search/:w', function(req, res) {
+  app.get('/api/customroutes/engrus_search/word/:w', function(req, res) {
 	if (req.params.w) {
 		console.log("requested term: "+req.params.w);
         EngRus.find({ where: {eng: {like: req.params.w}}}, function (error, docs) {
@@ -28,4 +28,23 @@ var EngRus = app.models.EngRus;
         });
     }
   });
+    
+    app.get('/api/customroutes/engrus_search/author/:id', function(req, res) {
+        if (req.params.w) {
+            console.log("requested author: "+req.params.id);
+            EngRus.find({ where: {author: authorId}}, function (error, docs) {
+            if (error) {
+                return res.
+                    status(status.INTERNAL_SERVER_ERROR).
+                    json({ error: error.toString() });
+            }
+            if (!docs) {
+              return res.
+                status(status.NOT_FOUND).
+                json({ error: 'Not found' });
+            }
+                res.json({results: docs}); //format adapted for angucomplete-alt 
+            });
+        }
+      });
 };

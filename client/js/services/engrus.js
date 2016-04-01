@@ -1,7 +1,7 @@
 angular
   .module('app')
-  .factory('EngRusService', ['EngRus', '$q', '$rootScope', function(EngRus, $q,
-      $rootScope) {
+  .factory('EngRusService', ['EngRus', '$q', '$rootScope', 'AuthService', 'Contributor', function(EngRus, $q,
+      $rootScope, AuthService, Contributor) {
 
     function addEngRus(eng, rus, subject, comment, author, lastUpdated) {
       return EngRus
@@ -20,3 +20,20 @@ angular
       addEngRus: addEngRus
     };
   }]);
+
+
+//.factory('EngRusDisplayByAuthorService', ['EngRus', '$q', '$rootScope', function(EngRus, $q,
+//      $rootScope) {
+//
+//    function displayByAuthor(author) {
+//      return EngRus
+//        .find({
+//         "where":{"author":author}
+//       })
+//       .$promise;
+//    }
+//
+//    return {
+//      displayByAuthor: displayByAuthor
+//    };
+//  }]);

@@ -80,4 +80,31 @@ $http.
               console.log("eng rus term added");
             });
         };
-  }]);
+  }])
+
+
+//.controller('EngRusTermsByAuthor', ['$scope', 'EngRus',  'EngRusDisplayByAuthorService', '$rootScope',
+//                function($scope, EngRus, EngRusDisplayByAuthorService, $rootScope) {
+//    $scope.displayTermsByAuthor = function() {
+//        EngRusDisplayByAuthorService.displayByAuthor($rootScope.currentUser.id)
+//            .then(function(author) {
+//              console.log("terms by author displayed");
+//              console.log(author);
+//              $scope.engrusTermsByAuthor = author;
+//              console.log($scope.engrusTermsByAuthor);
+//            });
+//    };
+//  }]);
+
+.controller('EngRusTermsByAuthor', ['$scope', 'EngRus', '$http', '$rootScope', 'EngRusService', 'AuthService',
+                function($scope, EngRus, $http, $rootScope, EngRusService, AuthService) {
+
+$http.
+    get('/api/EngRus/?filter={"where": { "author": "'+ $rootScope.currentUser.id+ '" } }').
+    success(function(data) {
+      console.log(JSON.stringify(data));
+      //$scope.target = JSON.stringify(data);
+        $scope.myTerms = data;
+    });
+
+  }])
